@@ -1,6 +1,6 @@
 
-rime/.config/ibus/rime/sync/**
-rime/.config/ibus/rime/build/**
-rime/.config/ibus/rime/*.userdb/**
+ibus/.config/ibus/rime/sync/**
+ibus/.config/ibus/rime/build/**
+ibus/.config/ibus/rime/*.userdb/**
 
 nvim/.config/nvim/plugin/**
