@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/home/choucl/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
   },
+  ["aquarium-vim"] = {
+    loaded = true,
+    path = "/home/choucl/.local/share/nvim/site/pack/packer/start/aquarium-vim",
+    url = "https://github.com/FrenzyExists/aquarium-vim"
+  },
   ["better-escape.nvim"] = {
     config = { "\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18better_escape\frequire\0" },
     loaded = true,
@@ -130,6 +135,11 @@ _G.packer_plugins = {
     path = "/home/choucl/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["github-nvim-theme"] = {
+    loaded = true,
+    path = "/home/choucl/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
+    url = "https://github.com/projekt0n/github-nvim-theme"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/choucl/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
@@ -149,6 +159,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/choucl/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["nightfox.nvim"] = {
+    loaded = true,
+    path = "/home/choucl/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
+    url = "https://github.com/EdenEast/nightfox.nvim"
   },
   ["nlsp-settings.nvim"] = {
     loaded = true,
@@ -205,6 +220,11 @@ _G.packer_plugins = {
     path = "/home/choucl/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
+  ["oceanic-next"] = {
+    loaded = true,
+    path = "/home/choucl/.local/share/nvim/site/pack/packer/start/oceanic-next",
+    url = "https://github.com/mhartington/oceanic-next"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/choucl/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -257,5 +277,6 @@ if should_profile then save_profiles() end
 end)
 
 if not no_errors then
+  error_msg = error_msg:gsub('"', '\\"')
   vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end
