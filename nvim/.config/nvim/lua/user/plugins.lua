@@ -65,9 +65,7 @@ return packer.startup(function(use)
   -- use "christianchiarulli/nvcode-color-schemes.vim"
   use "shaunsingh/nord.nvim"
   use "mhartington/oceanic-next"
-    use "projekt0n/github-nvim-theme"
-    use "FrenzyExists/aquarium-vim"
-    use "EdenEast/nightfox.nvim"
+  use "EdenEast/nightfox.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
