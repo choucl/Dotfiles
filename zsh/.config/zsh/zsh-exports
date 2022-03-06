@@ -10,7 +10,4 @@ export PATH=$HOME/.local/share/go/bin:$PATH
 export GOPATH=$HOME/.local/share/go
 export PATH="$PATH:./node_modules/.bin"
 eval "$(zoxide init zsh)"
-# export PATH=$HOME/.fnm:$PATH
-# eval "$(fnm env)"
 # eval "`pip completion --zsh`"
-
