@@ -42,6 +42,8 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
+vim.cmd "command W w"
+vim.cmd "command Wq wq"
 vim.cmd "set whichwrap+=<,>,[,]"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
