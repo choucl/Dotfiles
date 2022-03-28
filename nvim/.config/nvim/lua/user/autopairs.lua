@@ -26,9 +26,11 @@ npairs.setup {
 }
 
 local Rule = require "nvim-autopairs.rule"
+local endwise = require "nvim-autopairs.ts-rule".endwise
 npairs.remove_rule('`')
 npairs.add_rules {
-  Rule('`', '`', 'javascript')
+  Rule('`', '`', 'javascript'),
+  endwise('begin$', 'end', 'verilog', nil)
 }
 
 local cmp_autopairs = require "nvim-autopairs.completion.cmp"
