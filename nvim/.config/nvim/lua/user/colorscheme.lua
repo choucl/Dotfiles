@@ -14,12 +14,14 @@ nightfox.setup({
       match_paren = true, -- inverse the highlighting of match_parens
     }
   },
-  pallets = {
+  palettes = {
     -- red = "#FF000", -- Override the red color for MAX POWER
     -- bg_alt = "#000000",
   },
   groups = {
-    type = { fg = "#88C0D0" }
+    all = {
+      type = { fg = "#88C0D0" }
+    }
   }
 })
 
