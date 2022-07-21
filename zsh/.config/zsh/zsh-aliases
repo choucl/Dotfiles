@@ -39,6 +39,9 @@ alias ll="ls -l"
 alias gaa="git add ."
 alias gcam="git commit -m "
 
+# weird
+alias nihao="cowsay nihao"
+
 case "$(uname -s)" in
 
 Darwin)
