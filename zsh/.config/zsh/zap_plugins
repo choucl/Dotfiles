@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# plugins
+plug "zap-zsh/supercharge"
+plug "zsh-users/zsh-autosuggestions"
+plug "hlissner/zsh-autopair"
+plug "zsh-users/zsh-syntax-highlighting"
+plug "zap-zsh/sudo"
+
+# prompt
+plug "zap-zsh/atmachine-prompt"
+
+# Example install completion
+plug "esc/conda-zsh-completion"

@@ -2,6 +2,13 @@
 export ZDOTDIR=$HOME/.config/zsh
 HISTFILE=~/.zsh_history
 setopt appendhistory
+setopt INC_APPEND_HISTORY  # apends every comman dto the hisotry file one it is executed
+setopt SHARE_HISTORY  # reloads teh history whenever you use it
+setopt HIST_FIND_NO_DUPS
+
+plug "$ZDOTDIR/aliases"
+plug "$ZDOTDIR/exports"
+plug "$ZDOTDIR/zap_plugins"
 
 # some useful options (man zshoptions)
 setopt autocd extendedglob nomatch menucomplete
@@ -26,21 +33,6 @@ zle -N down-line-or-beginning-search
 
 # Colors
 autoload -Uz colors && colors
-
-# Useful Functions
-source "$ZDOTDIR/zsh-functions"
-
-# Normal files to source
-zsh_add_file "zsh-exports"
-zsh_add_file "zsh-aliases"
-zsh_add_file "zsh-prompt"
-
-# Plugins
-zsh_add_plugin "zsh-users/zsh-autosuggestions"
-zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
-zsh_add_plugin "hlissner/zsh-autopair"
-# For more plugins: https://github.com/unixorn/awesome-zsh-plugins
-# More completions https://github.com/zsh-users/zsh-completions
 
 # Key-bindings
 bindkey -s '^o' 'ranger^M'

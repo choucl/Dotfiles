@@ -23,9 +23,6 @@ alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
 # receive the key of a developer
 alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
 
-# For when keys break
-alias archlinx-fix-keys="sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
-
 # systemd
 alias mach_list_systemctl="systemctl list-unit-files --state=enabled"
 
@@ -60,3 +57,29 @@ CYGWIN* | MINGW32* | MSYS* | MINGW*)
 	# echo 'Other OS'
 	;;
 esac
+
+if [[ -d /opt/CIC ]]; then
+    alias cic_mount='
+      sudo mount -t nfs CASGPU:VOL1/Shared/CIC /opt/CIC -o ro
+    '
+else
+    alias cic_mount='
+      sudo mount -t nfs CASGPU:VOL1/Shared/CIC /opt/CIC -o ro
+      sudo mkdir -p /usr/cad/CBDK
+      sudo ln -s /opt/CIC/Cell_Libraries/CBDK018_UMC_Faraday_v1.0 /usr/cad/CBDK
+      sudo ln -s /opt/CIC/Cell_Libraries/CBDK_IC_Contest_v2.1 /usr/cad/CBDK
+      sudo ln -s /opt/CIC/Cell_Libraries/CBDK_IC_Contest_v2.5 /usr/cad/CBDK
+    '
+fi
+
+alias cic_start='
+    # source /opt/CIC/exec/vcs.shrc
+    source /opt/CIC/exec/Verdi.shrc
+    source /opt/CIC/exec/Synthesis.shrc
+    source /opt/CIC/exec/IES.shrc
+    source /opt/CIC/exec/Jasper.shrc
+    source /opt/CIC/exec/Innovus.shrc
+    source /opt/CIC/exec/Primetime.shrc
+'
+
+alias cic_stop='unset LD_LIBRARY_PATH'
