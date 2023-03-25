@@ -1,10 +1,5 @@
 #!/bin/sh
 export ZDOTDIR=$HOME/.config/zsh
-HISTFILE=~/.zsh_history
-setopt appendhistory
-setopt INC_APPEND_HISTORY  # apends every comman dto the hisotry file one it is executed
-setopt SHARE_HISTORY  # reloads teh history whenever you use it
-setopt HIST_FIND_NO_DUPS
 
 plug "$ZDOTDIR/aliases"
 plug "$ZDOTDIR/exports"
@@ -82,3 +77,12 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # setxkbmap -option caps:escape
 # swap escape and caps
 # setxkbmap -option caps:swapescape
+
+# history
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=1000000
+setopt appendhistory
+setopt INC_APPEND_HISTORY  # apends every comman dto the hisotry file one it is executed
+setopt SHARE_HISTORY  # reloads teh history whenever you use it
+setopt HIST_FIND_NO_DUPS
