@@ -10,8 +10,5 @@ export PATH=$HOME/.local/share/go/bin:$PATH
 export GOPATH=$HOME/.local/share/go
 export PATH="$PATH:./node_modules/.bin"
 eval "$(zoxide init zsh)"
-export PATH=/opt/riscv/bin:/opt/riscv-spike/bin:/opt/riscv-pk/riscv64-unknown-elf/bin:$PATH
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="/opt/riscv/bin:/opt/riscv-spike/bin:/opt/riscv-pk/riscv64-unknown-elf/bin":$PATH
 # eval "`pip completion --zsh`"
