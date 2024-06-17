@@ -10,5 +10,16 @@ export PATH=$HOME/.local/share/go/bin:$PATH
 export GOPATH=$HOME/.local/share/go
 export PATH="$PATH:./node_modules/.bin"
 eval "$(zoxide init zsh)"
-export PATH=/opt/riscv/bin:$PATH
+export PATH=$PATH:/opt/riscv/bin
+export PATH=$PATH:/opt/llvm/bin
+export PATH=$PATH:"/opt/riscv/riscv64-unknown-elf/bin"
+export PATH=$PATH:"/opt/Xilinx/Vivado/2022.2/bin"
+export PATH=$PATH:"/opt/bsc/latest/bin"
+export PATH=$PATH:"$HOME/.local/share/Natural Docs"
+
+PATH="/home/choucl/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/choucl/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/choucl/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/choucl/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/choucl/perl5"; export PERL_MM_OPT;
 # eval "`pip completion --zsh`"

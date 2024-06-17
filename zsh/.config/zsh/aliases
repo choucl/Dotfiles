@@ -65,7 +65,8 @@ else
 fi
 
 alias cic_start='
-    # source /opt/CIC/exec/vcs.shrc
+    source /opt/CIC/exec/Spyglass.shrc
+    source /opt/CIC/exec/vcs.shrc
     source /opt/CIC/exec/Verdi.shrc
     source /opt/CIC/exec/Synthesis.shrc
     source /opt/CIC/exec/IES.shrc
