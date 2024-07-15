@@ -30,7 +30,7 @@ xset r rate 210 40
 # Environment variables set everywhere
 export EDITOR="nvim"
 export TERMINAL="gnome-terminal"
-export BROWSER="brave"
+export BROWSER="firefox"
 
 # For QT Themes
 export QT_QPA_PLATFORMTHEME=qt5ct
@@ -42,9 +42,12 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 
 # history
 HISTFILE=$HOME/.zsh_history
-HISTSIZE=1000000
-SAVEHIST=1000000
-setopt appendhistory
+HISTSIZE=10000000
+SAVEHIST=10000000
+setopt APPEND_HISTORY
 setopt INC_APPEND_HISTORY  # apends every comman dto the hisotry file one it is executed
 setopt SHARE_HISTORY  # reloads teh history whenever you use it
 setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_DUPS
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_SPACE

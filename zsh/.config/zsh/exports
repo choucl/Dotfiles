@@ -16,6 +16,7 @@ export PATH=$PATH:"/opt/riscv/riscv64-unknown-elf/bin"
 export PATH=$PATH:"/opt/Xilinx/Vivado/2022.2/bin"
 export PATH=$PATH:"/opt/bsc/latest/bin"
 export PATH=$PATH:"$HOME/.local/share/Natural Docs"
+export PATH=$PATH:"$HOME/.fzf/bin"
 
 PATH="/home/choucl/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/choucl/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
