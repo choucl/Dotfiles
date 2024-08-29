@@ -6,7 +6,7 @@ export ZDOTDIR=$HOME/.config/zsh
 source "$ZDOTDIR/aliases"
 source "$ZDOTDIR/exports"
 source "$ZDOTDIR/plugins"
-source "$ZDOTDIR/secrets"
+[ -f "$ZDOTDIR/secrets" ] && source "$ZDOTDIR/secrets"
 
 # some useful options (man zshoptions)
 setopt autocd extendedglob nomatch menucomplete
