@@ -4,3 +4,4 @@ ibus/.config/ibus/rime/build/**
 ibus/.config/ibus/rime/*.userdb/**
 
 nvim/.config/nvim/plugin/**
+nvim/.config/nvim/lazy-lock.json
