@@ -63,7 +63,7 @@ curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh 
 3. [nvm](https://github.com/nvm-sh/nvm)
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
-nvm install 16
+nvm install 18
 ```
 
 4. [fzf](https://github.com/junegunn/fzf)
