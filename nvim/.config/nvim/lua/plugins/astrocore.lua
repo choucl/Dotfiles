@@ -61,7 +61,11 @@ return {
           end,
           desc = "Close buffer from tabline",
         },
-        ["<Leader>G"] = {":Gen<CR>", desc = "Gen (Ollama local AI)"},
+        ["<Leader>a"] = { desc = "Gen (Ollama local AI)" },
+        ["<Leader>as"] = { ":Gen Summarize<cr>", desc = "Generate summary" },
+        ["<Leader>ac"] = { ":Gen Chat<cr>", desc = "Generate chat" },
+        ["<Leader>ar"] = { ":Gen Review_Code<cr>", desc = "Generate code review" },
+        ["<Leader>aa"] = { ":Gen Ask<cr>", desc = "Ask a question" },
 
         -- git hunk navigation
         ["<leader>gj"] = { ":Gitsigns next_hunk<cr>", desc = "Go to next Git hunk" },
@@ -74,6 +78,13 @@ return {
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
       },
+      v = {
+        ["<Leader>a"] = { desc = "Gen (Ollama local AI)" },
+        ["<Leader>as"] = { ":Gen Summarize<cr>", desc = "Generate summary" },
+        ["<Leader>ar"] = { ":Gen Review_Code<cr>", desc = "Generate code review" },
+        ["<Leader>aa"] = { ":Gen Ask<cr>", desc = "Ask a question" },
+        ["<Leader>ac"] = { ":Gen Add_Comment<cr>", desc = "Add a comment" },
+      }
     },
   },
 }
