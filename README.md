@@ -71,3 +71,9 @@ nvm install 18
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 ```
+
+5. [bat](https://github.com/sharkdp/bat)'
+```bash
+sudo apt install bat
+ln -s /usr/bin/batcat ~/.local/bin/bat
+```
