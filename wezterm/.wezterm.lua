@@ -20,11 +20,11 @@ c.front_end = "WebGpu"
 
 -- color
 c.color_scheme = 'Catppuccin Mocha'
+c.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 
 c.window_padding = { left = 10, right = 15, top = 10, bottom = 0 }
 c.enable_scroll_bar = true
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
-  c.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
   c.default_prog = { 'Powershell.exe', '-File', 'C:/ip_ssh.ps1' }
 
   c.launch_menu = {
@@ -33,7 +33,6 @@ if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
     { label = 'PowerShell', args = { 'C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe' }, },
   }
 else
-  c.window_decorations = "RESIZE"
   c.default_prog = { 'zsh' }
   c.launch_menu = {
     { label = 'zsh', args = { 'zsh' }, },
