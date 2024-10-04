@@ -71,6 +71,10 @@ return {
         ["<leader>gj"] = { ":Gitsigns next_hunk<cr>", desc = "Go to next Git hunk" },
         ["<leader>gk"] = { ":Gitsigns prev_hunk<cr>", desc = "Go to previous Git hunk" },
 
+        -- language server diagnostics
+        ["<leader>lj"] = { vim.diagnostic.goto_next, desc = "Jump to next diagnostic" },
+        ["<leader>lk"] = { vim.diagnostic.goto_prev, desc = "Jump to previous diagnostic" },
+
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         -- ["<Leader>b"] = { desc = "Buffers" },
