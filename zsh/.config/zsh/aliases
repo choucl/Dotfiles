@@ -25,7 +25,8 @@ alias ll="ls -l"
 
 # git
 alias gaa="git add ."
-alias gcam="git commit -m "
+alias gcm="git commit -m "
+alias gnvcm="git commit --no-verify -m "
 
 # weird
 alias nihao="cowsay nihao"
