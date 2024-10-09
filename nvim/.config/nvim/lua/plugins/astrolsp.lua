@@ -93,6 +93,9 @@ return {
           end,
         },
       },
+      v = {
+        ["p"] = { "P" },
+      }
     },
     -- A custom `on_attach` function to be run after the default `on_attach` function
     -- takes two parameters `client` and `bufnr`  (`:h lspconfig-setup`)
