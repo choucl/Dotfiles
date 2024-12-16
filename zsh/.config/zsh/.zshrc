@@ -4,8 +4,8 @@ export ZDOTDIR=$HOME/.config/zsh
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 
 source "$ZDOTDIR/aliases"
-source "$ZDOTDIR/exports"
 source "$ZDOTDIR/plugins"
+source "$ZDOTDIR/exports"
 [ -f "$ZDOTDIR/secrets" ] && source "$ZDOTDIR/secrets"
 
 # some useful options (man zshoptions)
@@ -47,3 +47,4 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_DUPS
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_SPACE
+setopt histignoredups
