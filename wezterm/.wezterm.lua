@@ -44,7 +44,8 @@ end
 c.disable_default_key_bindings = true
 local act = wezterm.action
 c.keys = {
-  { key = 'Tab', mods = 'SHIFT|CTRL', action = act.ActivateTabRelative(1) },
+  { key = '}', mods = 'SHIFT|CTRL', action = act.ActivateTabRelative(1) },
+  { key = '{', mods = 'SHIFT|CTRL', action = act.ActivateTabRelative(-1) },
   { key = 'F11', mods = 'NONE', action = act.ToggleFullScreen },
   { key = '+', mods = 'SHIFT|CTRL', action = act.IncreaseFontSize },
   { key = '_', mods = 'SHIFT|CTRL', action = act.DecreaseFontSize },
