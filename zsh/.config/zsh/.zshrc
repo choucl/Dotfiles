@@ -48,3 +48,5 @@ setopt HIST_IGNORE_DUPS
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_SPACE
 setopt histignoredups
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
