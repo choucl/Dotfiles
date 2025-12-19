@@ -19,6 +19,7 @@ vim.filetype.add {
   pattern = {
     [".*sva"] = "systemverilog",
     [".*svh"] = "systemverilog",
+    [".cl"] = "cpp",
   },
   extension = {
     bsv = "bsv",

@@ -26,6 +26,7 @@ PERL_MM_OPT="INSTALL_BASE=/home/choucl/perl5"; export PERL_MM_OPT;
 if [[ -n "$IN_NIX_SHELL" ]]; then
   export PS1="($name) $PS1"
 fi
+
 export TERM=xterm-256color
 
 if [[ -d "/usr/local/cuda" ]]; then
@@ -34,3 +35,8 @@ if [[ -d "/usr/local/cuda" ]]; then
   export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
   export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:$DYLD_LIBRARY_PATH
 fi
+
+# Include paths
+export C_INCLUDE_PATH=$HOME/.local/include:$C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=$HOME/.local/include:$CPLUS_INCLUDE_PATH
+export CPATH=$HOME/.local/include:$CPATH
