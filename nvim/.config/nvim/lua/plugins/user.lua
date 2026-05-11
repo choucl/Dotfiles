@@ -112,6 +112,7 @@ return {
         jump_prev_row = { "<S-Enter>", mode = { "n", "v" } },
       },
     },
+    ft = { "csv", "tsv" },
     cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
   },
 

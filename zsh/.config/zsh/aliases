@@ -77,3 +77,26 @@ alias cic_start='
 '
 
 alias cic_stop='unset LD_LIBRARY_PATH'
+
+clip() {
+    # Read from stdin (pipe) or from a file argument
+    local data
+    if [ -t 0 ]; then
+        # If no pipe, check if a filename was provided
+        if [ -n "$1" ]; then
+            data=$(cat "$1")
+        else
+            echo "Usage: echo 'text' | clip  OR  clip filename.txt"
+            return 1
+        fi
+    else
+        # Read from pipe
+        data=$(cat -)
+    fi
+
+    # Encode to base64 and send the OSC 52 sequence
+    local b64=$(printf "%s" "$data" | base64 | tr -d '\n')
+    printf "\033]52;c;%s\a" "$b64"
+    
+    echo "Output sent to clipboard"
+}
