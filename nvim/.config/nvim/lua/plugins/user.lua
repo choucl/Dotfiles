@@ -12,6 +12,12 @@ return {
   --   event = "BufRead",
   --   config = function() require("lsp_signature").setup() end,
   -- },
+ {
+  'chomosuke/typst-preview.nvim',
+  lazy = false, -- or ft = 'typst'
+  version = '1.*',
+  opts = {}, -- lazy.nvim will implicitly calls `setup {}`
+},
   { "github/copilot.vim", event = "User AstroFile" },
   {
     "numToStr/Comment.nvim",

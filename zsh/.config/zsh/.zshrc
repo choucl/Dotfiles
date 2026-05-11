@@ -20,8 +20,14 @@ unsetopt BEEP
 # Colors
 autoload -Uz colors && colors
 
+# Initialize zsh's completion system so Tab completion works for plugins/widgets.
+autoload -Uz compinit
+compinit
+
 # Speedy keys
-xset r rate 210 40
+if [[ -n "${DISPLAY:-}" ]] && command -v xset >/dev/null 2>&1; then
+  xset r rate 210 40
+fi
 
 # Environment variables set everywhere
 export EDITOR="nvim"

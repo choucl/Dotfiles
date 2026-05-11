@@ -3,7 +3,7 @@
 
 # plugins
 plug "zap-zsh/sudo"
-plug "zap-zsh/nvm"
+# plug "zap-zsh/nvm"
 plug "zap-zsh/fzf"
 plug "Aloxaf/fzf-tab"
 plug "Freed-Wu/fzf-tab-source"
