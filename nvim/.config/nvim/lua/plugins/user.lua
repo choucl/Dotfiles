@@ -12,13 +12,34 @@ return {
   --   event = "BufRead",
   --   config = function() require("lsp_signature").setup() end,
   -- },
- {
-  'chomosuke/typst-preview.nvim',
-  lazy = false, -- or ft = 'typst'
-  version = '1.*',
-  opts = {}, -- lazy.nvim will implicitly calls `setup {}`
-},
+  {
+    "chomosuke/typst-preview.nvim",
+    lazy = false, -- or ft = 'typst'
+    version = "1.*",
+    opts = {}, -- lazy.nvim will implicitly calls `setup {}`
+  },
   { "github/copilot.vim", event = "User AstroFile" },
+  {
+    "olimorris/codecompanion.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    opts = {
+      -- NOTE: The log_level is in `opts.opts`
+      opts = {
+        log_level = "DEBUG", -- or "TRACE"
+      },
+      interactions = {
+        chat = {
+          adapter = {
+            name = "opencode",
+            model = "openai/gpt-5.5",
+          },
+        },
+      },
+    },
+  },
   {
     "numToStr/Comment.nvim",
     config = function()
@@ -36,20 +57,20 @@ return {
         replace = true,
         extract = "```$filetype\n(.-)```",
       }
-      opts.model = "llama3.2"       -- The default model to use.
+      opts.model = "llama3.2" -- The default model to use.
       opts.host = "192.168.164.199" -- The host running the Ollama service.
-      opts.port = "11434"           -- The port on which the Ollama service is listening.
-      opts.quit_map = "q"           -- set keymap for close the response window
-      opts.retry_map = "<c-r>"      -- set keymap to re-send the current prompt
+      opts.port = "11434" -- The port on which the Ollama service is listening.
+      opts.quit_map = "q" -- set keymap for close the response window
+      opts.retry_map = "<c-r>" -- set keymap to re-send the current prompt
       opts.init = function(options) pcall(io.popen, "ollama serve > /dev/null 2>&1 &") end
       -- Function to initialize Ollama
       opts.command = function(options)
         local body = { model = options.model, stream = true }
         return "curl --silent --no-buffer -X POST http://"
-            .. options.host
-            .. ":"
-            .. options.port
-            .. "/v1/chat/completions -d $body"
+          .. options.host
+          .. ":"
+          .. options.port
+          .. "/v1/chat/completions -d $body"
       end
       -- The command for the Ollama service. You can use placeholders $prompt, $model and $body (shellescaped).
       -- This can also be a command string.
@@ -57,10 +78,10 @@ return {
       -- (context property is optional).
       -- list_models = '<omitted lua function>', -- Retrieves a list of model names
       opts.display_mode = "split" -- The display mode. Can be "float" or "split".
-      opts.show_prompt = false    -- Shows the prompt submitted to Ollama.
-      opts.show_model = true      -- Displays which model you are using at the beginning of your chat session.
-      opts.no_auto_close = true   -- Never closes the window automatically.
-      opts.debug = false          -- Prints errors and the command which is run.
+      opts.show_prompt = false -- Shows the prompt submitted to Ollama.
+      opts.show_model = true -- Displays which model you are using at the beginning of your chat session.
+      opts.no_auto_close = true -- Never closes the window automatically.
+      opts.debug = false -- Prints errors and the command which is run.
     end,
   },
   {
@@ -91,12 +112,12 @@ return {
     opts = {},
     dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
   },
-  { "catppuccin/nvim",    name = "catppuccin",     priority = 1000 },
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   {
     "chomosuke/typst-preview.nvim",
     lazy = false, -- or ft = 'typst'
     version = "1.*",
-    opts = {},    -- lazy.nvim will implicitly calls `setup {}`
+    opts = {}, -- lazy.nvim will implicitly calls `setup {}`
   },
   {
     "hat0uma/csvview.nvim",
