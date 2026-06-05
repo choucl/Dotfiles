@@ -75,6 +75,15 @@ return {
         ["<leader>lj"] = { vim.diagnostic.goto_next, desc = "Jump to next diagnostic" },
         ["<leader>lk"] = { vim.diagnostic.goto_prev, desc = "Jump to previous diagnostic" },
 
+        ["<Leader>fW"] = {
+          function()
+            require("telescope.builtin").live_grep {
+              additional_args = function() return { "--hidden", "--no-ignore" } end,
+            }
+          end,
+          desc = "Find words in all files",
+        },
+
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         -- ["<Leader>b"] = { desc = "Buffers" },

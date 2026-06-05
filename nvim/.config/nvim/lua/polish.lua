@@ -35,23 +35,28 @@ vim.api.nvim_create_autocmd("FileType", {
   desc = "Auto enable csvview for csv/tsv",
 })
 
--- Create an augroup to prevent duplicate event listeners if you reload your config
 local osc52_group = vim.api.nvim_create_augroup("OSC52Yank", { clear = true })
 
-vim.api.nvim_create_autocmd("TextYankPost", {
-    group = osc52_group,
-    callback = function()
-        local event = vim.v.event
+local function osc52_copy(text)
+  local b64 = vim.base64.encode(text)
+  local seq = string.format("\027]52;c;%s\007", b64)
 
-        -- trigger only with y
-        if event.operator == 'y' then
-            -- event.regcontents contains the yanked text as a table of lines
-            local text = table.concat(event.regcontents, "\n")
-            -- Base64 encode the text
-            local b64 = vim.base64.encode(text) -- Neovim 0.10+
-            -- Construct and send the OSC 52 sequence
-            local osc52_seq = string.format("\x1b]52;c;%s\x07", b64)
-            io.stderr:write(osc52_seq)
-        end
-    end,
+  io.stdout:write(seq)
+  io.stdout:flush()
+end
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+  group = osc52_group,
+  callback = function()
+    local event = vim.v.event
+    if event.operator ~= "y" then
+      return
+    end
+
+    ---@type string[]
+    local regcontents = event.regcontents
+
+    local text = table.concat(regcontents, "\n")
+    osc52_copy(text)
+  end,
 })

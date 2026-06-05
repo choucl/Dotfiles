@@ -43,3 +43,8 @@ fi
 export C_INCLUDE_PATH=$HOME/.local/include:$C_INCLUDE_PATH
 export CPLUS_INCLUDE_PATH=$HOME/.local/include:$CPLUS_INCLUDE_PATH
 export CPATH=$HOME/.local/include:$CPATH
+
+if [[ -o interactive && -n "$SSH_CONNECTION" && -n "$SSH_TTY" && -t 1 && -z "$TMUX" && -z "$TERM_PROGRAM" ]]; then
+  export TERM_PROGRAM=WezTerm
+  export WEZTERM_PANE=1
+fi
