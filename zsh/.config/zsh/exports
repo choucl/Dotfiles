@@ -20,6 +20,11 @@ export PATH=$PATH:"/opt/Xilinx/Vivado/2022.2/bin"
 export PATH=$PATH:"/opt/bsc/latest/bin"
 export PATH=$PATH:"$HOME/.local/share/Natural Docs"
 export PATH=$PATH:"$HOME/.fzf/bin"
+# opencode
+export PATH=$HOME/.opencode/bin:$PATH
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 
 PATH="/home/choucl/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/choucl/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
@@ -48,3 +53,7 @@ if [[ -o interactive && -n "$SSH_CONNECTION" && -n "$SSH_TTY" && -t 1 && -z "$TM
   export TERM_PROGRAM=WezTerm
   export WEZTERM_PANE=1
 fi
+
+# >>> oh-my-opencode-slim background subagents >>>
+export OPENCODE_EXPERIMENTAL_BACKGROUND_SUBAGENTS=true
+# <<< oh-my-opencode-slim background subagents <<<

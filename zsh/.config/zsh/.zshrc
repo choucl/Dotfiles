@@ -56,3 +56,6 @@ setopt HIST_IGNORE_SPACE
 setopt histignoredups
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# bun completions
+[ -s "/Users/choucl/.bun/_bun" ] && source "/Users/choucl/.bun/_bun"
