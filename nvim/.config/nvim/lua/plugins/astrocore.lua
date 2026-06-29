@@ -30,7 +30,7 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
-        swapfile = false -- sets vim.opt.swapfile
+        swapfile = false, -- sets vim.opt.swapfile
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -72,16 +72,17 @@ return {
         ["<leader>gk"] = { ":Gitsigns prev_hunk<cr>", desc = "Go to previous Git hunk" },
 
         -- language server diagnostics
-        ["<leader>lj"] = { vim.diagnostic.goto_next, desc = "Jump to next diagnostic" },
-        ["<leader>lk"] = { vim.diagnostic.goto_prev, desc = "Jump to previous diagnostic" },
-
+        ["<leader>lj"] = { function() vim.diagnostic.jump { count = 1 } end, desc = "Jump to next diagnostic" },
+        ["<leader>lk"] = { function() vim.diagnostic.jump { count = -1 } end, desc = "Jump to previous diagnostic" },
         ["<Leader>fW"] = {
           function()
-            require("telescope.builtin").live_grep {
-              additional_args = function() return { "--hidden", "--no-ignore" } end,
+            local Snacks = require "snacks"
+            Snacks.picker.grep {
+              hidden = true,
+              ignored = true,
             }
           end,
-          desc = "Find words in all files",
+          desc = "Grep all files",
         },
 
         -- tables with just a `desc` key will be registered with which-key if it's installed
@@ -97,7 +98,7 @@ return {
         ["<Leader>ar"] = { ":Gen Review_Code<cr>", desc = "Generate code review" },
         ["<Leader>aa"] = { ":Gen Ask<cr>", desc = "Ask a question" },
         ["<Leader>ac"] = { ":Gen Add_Comment<cr>", desc = "Add a comment" },
-      }
+      },
     },
   },
 }
