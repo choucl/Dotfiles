@@ -19,3 +19,47 @@ plug "zap-zsh/atmachine-prompt"
 # zsh-history-substring-search
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
+
+# zoxide
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
+fi
+
+# worktree fzf
+wtcd() {
+  local selected dir
+
+  selected=$(
+    git worktree list --porcelain | awk -v home="$HOME" '
+      /^worktree / {
+        p = substr($0, 10)
+        display = p
+        sub(home, "~", display)
+        b = ""
+        h = ""
+      }
+      /^HEAD / { h = substr($0, 6, 8) }
+      /^branch / {
+        b = substr($0, 8)
+        sub("refs/heads/", "", b)
+        printf "%-28s %-10s %-55s\t%s\n", b, h, display, p
+      }
+      /^detached$/ {
+        printf "%-28s %-10s %-55s\t%s\n", "detached", h, display, p
+      }
+    ' | fzf \
+      --height=45% \
+      --layout=reverse \
+      --border \
+      --prompt="worktree> " \
+      --header="branch                       commit     path" \
+      --with-nth=1,2,3 \
+      --delimiter=$'\t' \
+      --preview='git -C {4} status --short --branch 2>/dev/null' \
+      --preview-window=down,40%
+  )
+
+  [[ -n "$selected" ]] || return
+  dir=$(cut -f2 <<< "$selected")
+  cd "$dir"
+}

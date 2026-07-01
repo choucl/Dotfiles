@@ -10,9 +10,6 @@ export PATH=$HOME/.local/share/go/bin:$PATH
 export GOPATH=$HOME/.local/share/go
 export PATH="$PATH:./node_modules/.bin"
 export PATH="$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$PATH"
-if command -v zoxide >/dev/null 2>&1; then
-  eval "$(zoxide init zsh)"
-fi
 export PATH=$PATH:/opt/riscv/bin
 export PATH=$PATH:/opt/llvm/bin
 export PATH=$PATH:"/opt/riscv/riscv64-unknown-elf/bin"
