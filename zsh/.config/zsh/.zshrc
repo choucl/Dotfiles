@@ -3,9 +3,9 @@
 export ZDOTDIR=$HOME/.config/zsh
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 
+source "$ZDOTDIR/exports"
 source "$ZDOTDIR/aliases"
 source "$ZDOTDIR/plugins"
-source "$ZDOTDIR/exports"
 [ -f "$ZDOTDIR/secrets" ] && source "$ZDOTDIR/secrets"
 
 # some useful options (man zshoptions)
