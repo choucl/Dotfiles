@@ -11,7 +11,7 @@ source "$ZDOTDIR/plugins"
 # some useful options (man zshoptions)
 setopt autocd extendedglob nomatch menucomplete
 setopt interactive_comments
-stty stop undef		# Disable ctrl-s to freeze terminal.
+[[ -t 0 ]] && stty stop undef		# Disable ctrl-s to freeze terminal.
 zle_highlight=('paste:none')
 
 # beeping is annoying
@@ -59,3 +59,5 @@ setopt histignoredups
 
 # bun completions
 [ -s "/Users/choucl/.bun/_bun" ] && source "/Users/choucl/.bun/_bun"
+
+command -v direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
