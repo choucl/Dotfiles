@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
-  "preset": "go-plus-balanced",
+  "preset": "balanced",
   "multiplexer": {
     "type": "tmux",
     "layout": "main-vertical",
@@ -11,20 +11,31 @@
       "orchestrator": {
         "model": "openai/gpt-5.5",
         "variant": "medium",
-        "skills": ["*"],
-        "mcps": ["*", "!context7"]
+        "skills": [
+          "*"
+        ],
+        "mcps": [
+          "*",
+          "!context7"
+        ]
       },
       "oracle": {
         "model": "openai/gpt-5.5",
         "variant": "high",
-        "skills": ["simplify"],
+        "skills": [
+          "simplify"
+        ],
         "mcps": []
       },
       "librarian": {
         "model": "openai/gpt-5.4-mini",
         "variant": "low",
         "skills": [],
-        "mcps": ["websearch", "context7", "gh_grep"]
+        "mcps": [
+          "websearch",
+          "context7",
+          "gh_grep"
+        ]
       },
       "explorer": {
         "model": "openai/gpt-5.4-mini",
@@ -49,13 +60,20 @@
       "orchestrator": {
         "model": "opencode-go/deepseek-v4-pro",
         "variant": "max",
-        "skills": ["*"],
-        "mcps": ["*", "!context7"]
+        "skills": [
+          "*"
+        ],
+        "mcps": [
+          "*",
+          "!context7"
+        ]
       },
       "oracle": {
         "model": "opencode-go/glm-5.2",
         "variant": "max",
-        "skills": ["simplify"],
+        "skills": [
+          "simplify"
+        ],
         "mcps": []
       },
       "council": {
@@ -67,7 +85,11 @@
       "librarian": {
         "model": "opencode-go/deepseek-v4-flash",
         "skills": [],
-        "mcps": ["websearch", "context7", "gh_grep"]
+        "mcps": [
+          "websearch",
+          "context7",
+          "gh_grep"
+        ]
       },
       "explorer": {
         "model": "opencode-go/deepseek-v4-flash",
@@ -92,57 +114,60 @@
         "mcps": []
       }
     },
-    
-    "go-plus-balanced": {
+    "balanced": {
       "orchestrator": {
         "model": "openai/gpt-5.5",
         "variant": "medium",
-        "skills": ["*"],
-        "mcps": ["*", "!context7"]
+        "skills": [
+          "*"
+        ],
+        "mcps": [
+          "*",
+          "!context7"
+        ]
       },
-
       "oracle": {
         "model": "openai/gpt-5.5",
-        "variant": "xhigh",
-        "skills": ["simplify"],
+        "variant": "high",
+        "skills": [
+          "simplify"
+        ],
         "mcps": []
       },
-
       "council": {
         "model": "opencode-go/deepseek-v4-pro",
         "variant": "max",
         "skills": [],
         "mcps": []
       },
-
       "librarian": {
-        "model": "openai/gpt-5.4-mini",
-        "variant": "low",
+        "model": "opencode-go/deepseek-v4-flash",
+        "variant": "max",
         "skills": [],
-        "mcps": ["websearch", "context7", "gh_grep"]
+        "mcps": [
+          "websearch",
+          "context7",
+          "gh_grep"
+        ]
       },
-
       "explorer": {
-        "model": "openai/gpt-5.4-mini",
-        "variant": "low",
+        "model": "opencode-go/deepseek-v4-flash",
+        "variant": "max",
         "skills": [],
         "mcps": []
       },
-
       "designer": {
         "model": "opencode-go/kimi-k2.7-code",
         "variant": "medium",
         "skills": [],
         "mcps": []
       },
-
       "fixer": {
-        "model": "opencode-go/gpt-5.5",
-        "variant": "low",
+        "model": "opencode-go/deepseek-v4-pro",
+        "variant": "max",
         "skills": [],
         "mcps": []
       },
-
       "observer": {
         "model": "openai/gpt-5.4-mini",
         "variant": "low",
@@ -151,13 +176,11 @@
       }
     }
   },
-  
   "council": {
     "default_preset": "balanced",
     "timeout": 300000,
     "councillor_execution_mode": "parallel",
     "councillor_retries": 1,
-
     "presets": {
       "balanced": {
         "reviewer": {
@@ -165,48 +188,40 @@
           "variant": "high",
           "prompt": "Focus on correctness, bugs, edge cases, concurrency hazards, hidden assumptions, and failure modes. Be concrete and adversarial."
         },
-
         "implementer": {
           "model": "opencode-go/deepseek-v4-pro",
           "variant": "thinking",
           "prompt": "Focus on implementation feasibility, code structure, minimal changes, API fit, testability, and whether the proposed plan is practical to implement."
         },
-
         "architect": {
           "model": "openai/gpt-5.5",
           "variant": "medium",
           "prompt": "Focus on architecture, abstraction boundaries, maintainability, long-term design risk, coupling, and whether the solution will age well."
         },
-        
         "systems": {
           "model": "opencode-go/glm-5.2",
           "prompt": "Focus on systems reasoning, invariants, resource trade-offs, concurrency, performance, and low-level implications."
         },
-
         "optimizer": {
           "model": "opencode-go/deepseek-v4-pro",
           "prompt": "Focus on performance, latency, memory usage, resource usage, scalability, and systems-level trade-offs."
         }
       },
-
       "go-only": {
         "reviewer": {
           "model": "opencode-go/deepseek-v4-pro",
           "variant": "high",
           "prompt": "Focus on correctness, bugs, edge cases, and failure modes."
         },
-
         "architect": {
           "model": "opencode-go/glm-5.2",
           "prompt": "Focus on architecture, maintainability, boundaries, and long-term design."
         },
-
         "implementer": {
           "model": "opencode-go/deepseek-v4-pro",
           "variant": "medium",
           "prompt": "Focus on implementation feasibility, code structure, API fit, and testability."
         },
-
         "optimizer": {
           "model": "opencode-go/deepseek-v4-pro",
           "prompt": "Focus on performance, latency, and resource usage."
