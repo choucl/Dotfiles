@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
-  "preset": "balanced",
+  "preset": "opencode-go",
   "multiplexer": {
     "type": "tmux",
     "layout": "main-vertical",

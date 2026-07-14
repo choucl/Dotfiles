@@ -25,6 +25,8 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 # cas4k server specific
 export PATH=$PATH:"/home/shared/texlive/bin/x86_64-linux"
+# Added by codebase-memory-mcp install
+export PATH="/home/choucl/.local/bin:$PATH"
 
 PATH="/home/choucl/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/choucl/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
@@ -57,3 +59,9 @@ fi
 # >>> oh-my-opencode-slim background subagents >>>
 export OPENCODE_EXPERIMENTAL_BACKGROUND_SUBAGENTS=true
 # <<< oh-my-opencode-slim background subagents <<<
+
+# >>> grok installer >>>
+export PATH="$HOME/.grok/bin:$PATH"
+fpath=(~/.grok/completions/zsh $fpath)
+autoload -Uz compinit && compinit -C
+# <<< grok installer <<<
