@@ -30,6 +30,7 @@ c.initial_cols = 96
 c.initial_rows = 26
 c.window_background_opacity = 1 -- no opacity
 c.use_fancy_tab_bar = true
+c.tab_bar_at_bottom = true
 c.font_size = 14
 c.window_frame = {
 	font = wezterm.font("SF Pro"),
