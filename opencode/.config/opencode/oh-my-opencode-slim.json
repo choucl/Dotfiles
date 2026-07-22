@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
-  "preset": "opencode-go",
+  "preset": "balanced",
   "multiplexer": {
     "type": "tmux",
     "layout": "main-vertical",
@@ -9,8 +9,8 @@
   "presets": {
     "openai": {
       "orchestrator": {
-        "model": "openai/gpt-5.5",
-        "variant": "medium",
+        "model": "openai/gpt-5.6-luna",
+        "variant": "max",
         "skills": [
           "*"
         ],
@@ -20,7 +20,7 @@
         ]
       },
       "oracle": {
-        "model": "openai/gpt-5.5",
+        "model": "openai/gpt-5.6-sol",
         "variant": "high",
         "skills": [
           "simplify"
@@ -50,8 +50,8 @@
         "mcps": []
       },
       "fixer": {
-        "model": "openai/gpt-5.5",
-        "variant": "low",
+        "model": "openai/gpt-5.6-luna",
+        "variant": "high",
         "skills": [],
         "mcps": []
       }
@@ -69,7 +69,7 @@
         ]
       },
       "oracle": {
-        "model": "opencode-go/glm-5.2",
+        "model": "opencode-go/kimi-k3",
         "variant": "max",
         "skills": [
           "simplify"
@@ -116,8 +116,8 @@
     },
     "balanced": {
       "orchestrator": {
-        "model": "openai/gpt-5.5",
-        "variant": "medium",
+        "model": "openai/gpt-5.6-luna",
+        "variant": "max",
         "skills": [
           "*"
         ],
@@ -127,7 +127,7 @@
         ]
       },
       "oracle": {
-        "model": "openai/gpt-5.5",
+        "model": "openai/gpt-5.6-sol",
         "variant": "high",
         "skills": [
           "simplify"
@@ -135,8 +135,8 @@
         "mcps": []
       },
       "council": {
-        "model": "opencode-go/deepseek-v4-pro",
-        "variant": "max",
+        "model": "xai/grok-4.5",
+        "variant": "high",
         "skills": [],
         "mcps": []
       },
@@ -163,8 +163,8 @@
         "mcps": []
       },
       "fixer": {
-        "model": "opencode-go/deepseek-v4-pro",
-        "variant": "max",
+        "model": "xai/grok-4.5",
+        "variant": "high",
         "skills": [],
         "mcps": []
       },
@@ -194,12 +194,13 @@
           "prompt": "Focus on implementation feasibility, code structure, minimal changes, API fit, testability, and whether the proposed plan is practical to implement."
         },
         "architect": {
-          "model": "openai/gpt-5.5",
+          "model": "openai/gpt-5.6-sol",
           "variant": "medium",
           "prompt": "Focus on architecture, abstraction boundaries, maintainability, long-term design risk, coupling, and whether the solution will age well."
         },
         "systems": {
-          "model": "opencode-go/glm-5.2",
+          "model": "xai/grok-4.5",
+          "variant": "high",
           "prompt": "Focus on systems reasoning, invariants, resource trade-offs, concurrency, performance, and low-level implications."
         },
         "optimizer": {
