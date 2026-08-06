@@ -17,8 +17,13 @@ plug "zap-zsh/atmachine-prompt"
 
 # settings
 # zsh-history-substring-search
+zmodload zsh/terminfo 2>/dev/null
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+[[ -n ${terminfo[kcuu1]} ]] && \
+  bindkey "${terminfo[kcuu1]}" history-substring-search-up
+[[ -n ${terminfo[kcud1]} ]] && \
+  bindkey "${terminfo[kcud1]}" history-substring-search-down
 
 # zoxide
 if command -v zoxide >/dev/null 2>&1; then
