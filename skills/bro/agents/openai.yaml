@@ -1,0 +1,6 @@
+interface:
+  display_name: "Bro"
+  short_description: "Rewrite messages in plain, natural language"
+  default_prompt: "Use $bro to restate the last message plainly."
+policy:
+  allow_implicit_invocation: false

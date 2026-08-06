@@ -16,11 +16,52 @@ This is the repository that stores all my useful dotfiles in Linux.
 
    `stow */`
 
+## Agent skills
+
+Personal skills live in `skills/<name>/` and are committed to this repository. Use
+`npx skills` to deploy them to the default agent harnesses configured here:
+
+- Codex
+- Claude Code
+- OpenCode
+- Grok Build
+- Antigravity
+
+Install or redeploy all personal skills:
+
+```bash
+cd ~/Dotfiles
+npx skills add . --global --skill '*' \
+  -a codex \
+  -a claude-code \
+  -a opencode \
+  -a grok \
+  -a antigravity \
+  -y
+```
+
+Install one skill only:
+
+```bash
+npx skills add . --global --skill bro \
+  -a codex -a claude-code -a opencode -a grok -a antigravity -y
+```
+
+Keep the default symlink installation; do not add `--copy`. After editing a
+personal skill, rerun the deployment command above. Use `npx skills update -g`
+for skills installed from external repositories, not for skills maintained here.
+
+List globally installed skills:
+
+```bash
+npx skills ls -g
+```
+
 ## Neovim
 
 Neovim v0.10
 ```bash
-git checkout release-0.10
+git checkout release-0.12
 make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=$HOME/.local
 make install
 ```

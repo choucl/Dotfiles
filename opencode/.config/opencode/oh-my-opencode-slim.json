@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
-  "preset": "balanced",
+  "preset": "opencode-go",
   "multiplexer": {
     "type": "tmux",
     "layout": "main-vertical",
@@ -58,7 +58,7 @@
     },
     "opencode-go": {
       "orchestrator": {
-        "model": "opencode-go/deepseek-v4-pro",
+        "model": "opencode-go/gpt-5.6-luna",
         "variant": "max",
         "skills": [
           "*"
@@ -77,13 +77,14 @@
         "mcps": []
       },
       "council": {
-        "model": "opencode-go/deepseek-v4-pro",
+        "model": "opencode-go/gpt-5.6-luna",
         "variant": "max",
         "skills": [],
         "mcps": []
       },
       "librarian": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-go/gpt-5.6-luna",
+        "variant": "medium",
         "skills": [],
         "mcps": [
           "websearch",
@@ -92,7 +93,8 @@
         ]
       },
       "explorer": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-go/gpt-5.6-luna",
+        "variant": "medium",
         "skills": [],
         "mcps": []
       },
@@ -103,8 +105,8 @@
         "mcps": []
       },
       "fixer": {
-        "model": "opencode-go/deepseek-v4-pro",
-        "variant": "high",
+        "model": "opencode-go/gpt-5.6-luna",
+        "variant": "max",
         "skills": [],
         "mcps": []
       },
