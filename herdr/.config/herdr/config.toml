@@ -1,0 +1,15 @@
+onboarding = false
+[ui]
+agent_panel_sort = "spaces"
+
+[theme]
+name = "terminal"
+auto_switch = false
+
+[keys]
+detach = "prefix+d"
+split_vertical = "prefix+|"
+focus_pane_left = "prefix+h"
+focus_pane_down = "prefix+j"
+focus_pane_up = "prefix+k"
+focus_pane_right = "prefix+l"
