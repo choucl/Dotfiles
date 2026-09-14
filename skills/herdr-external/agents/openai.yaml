@@ -1,0 +1,4 @@
+interface:
+  display_name: "External Herdr"
+  short_description: "Safely control Herdr sessions from outside panes"
+  default_prompt: "Use $herdr-external to manage a running Herdr session from this external agent."
