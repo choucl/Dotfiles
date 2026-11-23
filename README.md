@@ -16,6 +16,21 @@ This is the repository that stores all my useful dotfiles in Linux.
 
    `stow */`
 
+## Agent instructions
+
+Keep shared global instructions in `AGENTS.md` at the root of Dotfiles. To add
+instructions for one harness, create `agent-overlays/<harness>.md` using
+`codex`, `claude`, `opencode`, `grok`, or `antigravity` as the filename stem.
+
+Run `bash scripts/link-agents.sh` from Dotfiles to deploy. A nonempty overlay
+is appended after the shared file in a generated copy under
+`agent-overlays/.generated/`. With an absent or empty overlay, the harness
+links directly to `AGENTS.md`. The script backs up existing custom instructions
+when replacing them. Git ignores the shared file, overlays, and generated copies.
+
+Edit the shared file or the overlay to make changes. Rerun the script to refresh
+generated copies, then start a new session to load the updated instructions.
+
 ## Agent skills
 
 Personal skills live in `skills/<name>/` and are committed to this repository. Use
